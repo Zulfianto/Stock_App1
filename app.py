@@ -99,13 +99,13 @@ app.layout = html.Div([
             dbc.Col([html.Div([
                 #dcc.Graph(figure=data)
                 dcc.Graph(id="graph1", animate=False),
-                dcc.Interval(id="graph-update1", disabled=False, interval=5*1000, max_intervals=-1, n_intervals=0)
+                dcc.Interval(id="graph-update1", disabled=False, interval=1*1000, max_intervals=-1, n_intervals=0)
                 ],
                 style={'margin': '0px 0px 0px 0px', 'width': '98%'}),]),
             dbc.Col([html.Div([
                 #dcc.Graph(figure=data1)
                 dcc.Graph(id="graph", animate=False),
-                dcc.Interval(id="graph-update", disabled=False, interval=5*1000, max_intervals=-1, n_intervals=0)
+                dcc.Interval(id="graph-update", disabled=False, interval=1*1000, max_intervals=-1, n_intervals=0)
                 ],
                 style={'margin': '0px 0px 0px 0px', 'width': '98%'}),])
         ], className="g-0")
@@ -260,21 +260,21 @@ def display_candlestick(n_clicks, input_data, input_value):
         y=df['RSISMA'][-80:],
         name='RSISMA',
         mode='lines',
-        line=dict(color='gray', width=3), yaxis="y2"))
+        line=dict(color='gray', width=2), yaxis="y2"))
 
     data.add_trace(go.Scatter(
         x=df.index[-80:],
         y=df['STOCHk_14_3_3'][-80:],
         name='STOCHk_14_3_3',
         mode='lines',
-        line=dict(color='blue', width=3), yaxis="y2"))
+        line=dict(color='blue', width=2), yaxis="y2"))
 
     data.add_trace(go.Scatter(
         x=df.index[-80:],
         y=df['STOCHd_14_3_3'][-80:],
         name='STOCHd_14_3_3',
         mode='lines',
-        line=dict(color='red', width=3), yaxis="y2"))
+        line=dict(color='red', width=2), yaxis="y2"))
 
     data.add_trace(go.Scatter(
         x=df.index[-80:],
@@ -355,7 +355,7 @@ def display_candlestick(n_clicks, input_data, input_value):
         plot_bgcolor='white',
         height=690,
         margin=dict(t=30, l=0, r=0, b=0),
-        xaxis=dict(range=[df.index[-80], df.index[-1] + timedelta(minutes=7)], rangeslider_visible=False,
+        xaxis=dict(range=[df.index[-80], df.index[-1] + timedelta(minutes=5)], rangeslider_visible=False,
                    rangebreaks=[
                        dict(bounds=["sat", "tue"]),
                        dict(bounds=[16, 9.5], pattern="hour"),
@@ -517,21 +517,21 @@ def display_candlestick(n_clicks, input_data, input_value):
         y=df['RSISMA'][-80:],
         name='RSISMA',
         mode='lines',
-        line=dict(color='gray', width=3), yaxis="y2"))
+        line=dict(color='gray', width=2), yaxis="y2"))
 
     data.add_trace(go.Scatter(
         x=df.index[-60:],
         y=df['STOCHk_14_3_3'][-60:],
         name='STOCHk_14_3_3',
         mode='lines',
-        line=dict(color='blue', width=3), yaxis="y2"))
+        line=dict(color='blue', width=2), yaxis="y2"))
 
     data.add_trace(go.Scatter(
         x=df.index[-60:],
         y=df['STOCHd_14_3_3'][-60:],
         name='STOCHd_14_3_3',
         mode='lines',
-        line=dict(color='red', width=3), yaxis="y2"))
+        line=dict(color='red', width=2), yaxis="y2"))
 
     data.add_trace(go.Scatter(
         x=df.index[-60:],
