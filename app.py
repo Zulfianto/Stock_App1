@@ -28,7 +28,7 @@ def data_frame(input_value):
     df['SUPERTs_14_5.0'] = df.ta.supertrend(length=14, multiplier=5)['SUPERTs_14_5.0']
     df['SUPERTl_14_4.5'] = df.ta.supertrend(length=14, multiplier=4.5)['SUPERTl_14_4.5']
     df['SUPERTs_14_4.5'] = df.ta.supertrend(length=14, multiplier=4.5)['SUPERTs_14_4.5']
-    df['VWAP_D'] = df.ta.vwap()
+    #df['VWAP_D'] = df.ta.vwap()
     df['PSARl_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARl_0.02_0.2']
     df['PSARs_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARs_0.02_0.2']
     df['STOCHk_14_3_3'] = df.ta.stoch(k=14, d=3, smooth_k=3)['STOCHk_14_3_3']
@@ -55,7 +55,7 @@ def data_frame1(input_value):
     df['SUPERTs_14_5.0'] = df.ta.supertrend(length=14, multiplier=5)['SUPERTs_14_5.0']
     df['SUPERTl_14_4.5'] = df.ta.supertrend(length=14, multiplier=4.5)['SUPERTl_14_4.5']
     df['SUPERTs_14_4.5'] = df.ta.supertrend(length=14, multiplier=4.5)['SUPERTs_14_4.5']
-    df['VWAP_D'] = df.ta.vwap()
+    #df['VWAP_D'] = df.ta.vwap()
     df['PSARl_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARl_0.02_0.2']
     df['PSARs_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARs_0.02_0.2']
     df['STOCHk_14_3_3'] = df.ta.stoch(k=14, d=3, smooth_k=3)['STOCHk_14_3_3']
@@ -213,12 +213,12 @@ def display_candlestick(n_clicks, input_data, input_value):
             color="red", opacity=1,
             size=6), hoverinfo='none', yaxis="y3"))
 
-    data.add_trace(go.Scatter(
-        x=df.index[-80:],
-        y=df['VWAP_D'][-80:],
-        name='VWAP',
-        mode='lines',
-        line=dict(color='purple', width=3), hoverinfo='none', yaxis="y3"))
+    #data.add_trace(go.Scatter(
+        #x=df.index[-80:],
+        #y=df['VWAP_D'][-80:],
+        #name='VWAP',
+        #mode='lines',
+        #line=dict(color='purple', width=3), hoverinfo='none', yaxis="y3"))
 
     data.add_trace(go.Scatter(
         x=df.index[-80:],
@@ -470,12 +470,12 @@ def display_candlestick(n_clicks, input_data, input_value):
             color="red", opacity=1,
             size=6), hoverinfo='none', yaxis="y3"))
 
-    data.add_trace(go.Scatter(
-        x=df.index[-60:],
-        y=df['VWAP_D'][-60:],
-        name='VWAP',
-        mode='lines',
-        line=dict(color='purple', width=3), hoverinfo='none', yaxis="y3"))
+    #data.add_trace(go.Scatter(
+        #x=df.index[-60:],
+        #y=df['VWAP_D'][-60:],
+        #name='VWAP',
+        #mode='lines',
+        #line=dict(color='purple', width=3), hoverinfo='none', yaxis="y3"))
 
     data.add_trace(go.Scatter(
         x=df.index[-60:],
