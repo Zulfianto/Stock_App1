@@ -357,7 +357,7 @@ def display_candlestick(n_clicks, input_data, input_value):
         margin=dict(t=30, l=0, r=0, b=0),
         xaxis=dict(range=[df.index[-80], df.index[-1] + timedelta(minutes=20)], rangeslider_visible=False,
                    rangebreaks=[
-                       dict(bounds=["sat", "tue"]),
+                       dict(bounds=["sat", "mon"]),
                        dict(bounds=[16, 9.5], pattern="hour"),
                        # dict(values=["2021-11-25", ])
                    ]),
@@ -614,7 +614,7 @@ def display_candlestick(n_clicks, input_data, input_value):
         margin=dict(t=30, l=0, r=0, b=0),
         xaxis=dict(range=[df.index[-60], df.index[-1] + timedelta(minutes=20)], rangeslider_visible=False,
                    rangebreaks=[
-                       dict(bounds=["sat", "tue"]),
+                       dict(bounds=["sat", "mon"]),
                        dict(bounds=[16, 9.5], pattern="hour"),
                        # dict(values=["2021-11-25", ])
                    ]),
