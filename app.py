@@ -99,13 +99,13 @@ app.layout = html.Div([
             dbc.Col([html.Div([
                 #dcc.Graph(figure=data)
                 dcc.Graph(id="graph1", animate=False),
-                dcc.Interval(id="graph-update1", disabled=False, interval=1*1000, max_intervals=-1, n_intervals=0)
+                dcc.Interval(id="graph-update1", disabled=False, interval=3*1000, max_intervals=-1, n_intervals=0)
                 ],
                 style={'margin': '0px 0px 0px 0px', 'width': '98%'}),]),
             dbc.Col([html.Div([
                 #dcc.Graph(figure=data1)
                 dcc.Graph(id="graph", animate=False),
-                dcc.Interval(id="graph-update", disabled=False, interval=1*1000, max_intervals=-1, n_intervals=0)
+                dcc.Interval(id="graph-update", disabled=False, interval=3*1000, max_intervals=-1, n_intervals=0)
                 ],
                 style={'margin': '0px 0px 0px 0px', 'width': '98%'}),])
         ], className="g-0")
@@ -355,7 +355,7 @@ def display_candlestick(n_clicks, input_data, input_value):
         plot_bgcolor='white',
         height=690,
         margin=dict(t=30, l=0, r=0, b=0),
-        xaxis=dict(range=[df.index[-80], df.index[-1] + timedelta(minutes=5)], rangeslider_visible=False,
+        xaxis=dict(range=[df.index[-80], df.index[-1] + timedelta(minutes=6)], rangeslider_visible=False,
                    rangebreaks=[
                        dict(bounds=["sat", "tue"]),
                        dict(bounds=[16, 9.5], pattern="hour"),
@@ -612,7 +612,7 @@ def display_candlestick(n_clicks, input_data, input_value):
         plot_bgcolor='white',
         height=690,
         margin=dict(t=30, l=0, r=0, b=0),
-        xaxis=dict(range=[df.index[-60], df.index[-1] + timedelta(minutes=20)], rangeslider_visible=False,
+        xaxis=dict(range=[df.index[-60], df.index[-1] + timedelta(minutes=22)], rangeslider_visible=False,
                    rangebreaks=[
                        dict(bounds=["sat", "tue"]),
                        dict(bounds=[16, 9.5], pattern="hour"),
