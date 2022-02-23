@@ -107,13 +107,13 @@ app.layout = html.Div([
         dbc.Row([
             dbc.Col([html.Div([
                 #dcc.Graph(figure=data)
-                dcc.Graph(id="graph1", animate=False),
+                dcc.Graph(id="graph1", animate=False, config={"displaylogo": False}),
                 dcc.Interval(id="graph-update1", disabled=False, interval=5*1000, max_intervals=-1, n_intervals=0)
                 ],
                 style={'margin': '0px 0px 0px 0px', 'width': '98%'}),]),
             dbc.Col([html.Div([
                 #dcc.Graph(figure=data1)
-                dcc.Graph(id="graph", animate=False),
+                dcc.Graph(id="graph", animate=False, config={"displaylogo": False}),
                 dcc.Interval(id="graph-update", disabled=False, interval=5*1000, max_intervals=-1, n_intervals=0)
                 ],
                 style={'margin': '0px 0px 0px 0px', 'width': '98%'}),])
