@@ -11,7 +11,7 @@ from dash import Input, Output, State, dcc, html
 from dash.exceptions import PreventUpdate
 
 def data_frame(input_value):
-    df = yf.download(tickers=input_value, period="5d", interval='1m')
+    df = yf.download(tickers=input_value, period="4d", interval='1m')
     df['SMA20'] = df.ta.sma(length=20)
     df['SMA12'] = df.ta.sma(length=12)
     df['EMA8'] = df.ta.ema(length=8)
