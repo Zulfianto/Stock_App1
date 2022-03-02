@@ -73,14 +73,14 @@ def data_frame2(input_value):
     df['PSARs_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARs_0.02_0.2']
     return df
 
-def data_frame3(input_value):
-    df = yf.download(tickers=input_value, period="5d", interval='30m')
-    df['BBL_20_2.0'] = df.ta.bbands(length=20)['BBL_20_2.0']
-    df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
-    df['RSI'] = df.ta.rsi(length=14)
-    df['PSARl_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARl_0.02_0.2']
-    df['PSARs_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARs_0.02_0.2']
-    return df
+#def data_frame3(input_value):
+    #df = yf.download(tickers=input_value, period="5d", interval='30m')
+    #df['BBL_20_2.0'] = df.ta.bbands(length=20)['BBL_20_2.0']
+    #df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
+    #df['RSI'] = df.ta.rsi(length=14)
+    #df['PSARl_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARl_0.02_0.2']
+    #df['PSARs_0.02_0.2'] = df.ta.psar(af0=0.02, af=0.02, max_af=0.2)['PSARs_0.02_0.2']
+    #return df
 
 warnings.simplefilter('ignore', UserWarning)
 
@@ -388,7 +388,7 @@ def display_candlestick(n_clicks, input_data, input_value):
 def display_candlestick(n_clicks, input_data, input_value):
     df = data_frame1(input_value)
     df1 = data_frame2(input_value)
-    df2 = data_frame3(input_value)
+    #df2 = data_frame3(input_value)
     data = go.Figure()
 
     data.add_trace(go.Candlestick(
@@ -448,19 +448,19 @@ def display_candlestick(n_clicks, input_data, input_value):
         mode='lines',
         line=dict(color='orange', width=3), hoverinfo='none', yaxis="y3"))
     
-    data.add_trace(go.Scatter(
-        x=df2.index[-10:],
-        y=df2['BBL_20_2.0'][-10:],
-        name='BBL',
-        mode='lines',
-        line=dict(color='red', width=3), hoverinfo='none', yaxis="y3"))
+    #data.add_trace(go.Scatter(
+        #x=df2.index[-10:],
+        #y=df2['BBL_20_2.0'][-10:],
+        #name='BBL',
+        #mode='lines',
+        #line=dict(color='red', width=3), hoverinfo='none', yaxis="y3"))
 
-    data.add_trace(go.Scatter(
-        x=df2.index[-10:],
-        y=df2['BBU_20_2.0'][-10:],
-        name='BBU',
-        mode='lines',
-        line=dict(color='red', width=3), hoverinfo='none', yaxis="y3"))
+    #data.add_trace(go.Scatter(
+        #x=df2.index[-10:],
+        #y=df2['BBU_20_2.0'][-10:],
+        #name='BBU',
+        #mode='lines',
+        #line=dict(color='red', width=3), hoverinfo='none', yaxis="y3"))
 
     data.add_trace(go.Scatter(
         x=df.index[-60:],
