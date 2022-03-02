@@ -11,7 +11,7 @@ from dash import Input, Output, State, dcc, html
 from dash.exceptions import PreventUpdate
 
 def data_frame(input_value):
-    df = yf.download(tickers=input_value, period="5d", interval='1m')
+    df = yf.download(tickers=input_value, period="4d", interval='1m')
     df['SMA20'] = df.ta.sma(length=20)
     df['SMA12'] = df.ta.sma(length=12)
     df['EMA8'] = df.ta.ema(length=8)
@@ -38,7 +38,7 @@ def data_frame(input_value):
 
 
 def data_frame1(input_value):
-    df = yf.download(tickers=input_value, period="5d", interval='5m')
+    df = yf.download(tickers=input_value, period="4d", interval='5m')
     df['SMA20'] = df.ta.sma(length=20)
     df['SMA12'] = df.ta.sma(length=12)
     df['EMA8'] = df.ta.ema(length=8)
@@ -65,7 +65,7 @@ def data_frame1(input_value):
 
 
 def data_frame2(input_value):
-    df = yf.download(tickers=input_value, period="5d", interval='15m')
+    df = yf.download(tickers=input_value, period="4d", interval='15m')
     df['BBL_20_2.0'] = df.ta.bbands(length=20)['BBL_20_2.0']
     df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
     df['RSI'] = df.ta.rsi(length=14)
