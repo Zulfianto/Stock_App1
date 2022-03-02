@@ -19,9 +19,9 @@ def data_frame(input_value):
     df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
     df['RSI'] = df.ta.rsi(length=14)
     df['RSISMA'] = ta.sma(df.RSI, length=50)
-    df['MACD_12_26_9'] = df.ta.macd(fast=12, slow=26, signal=9)['MACD_12_26_9']
-    df['MACDh_12_26_9'] = df.ta.macd(fast=12, slow=26, signal=9)['MACDh_12_26_9']
-    df['MACDs_12_26_9'] = df.ta.macd(fast=12, slow=26, signal=9)['MACDs_12_26_9']
+    df['MACD_12_26_9'] = df.ta.macd(fast=12, slow=21, signal=9)['MACD_12_21_9']
+    df['MACDh_12_26_9'] = df.ta.macd(fast=12, slow=21, signal=9)['MACDh_12_21_9']
+    df['MACDs_12_26_9'] = df.ta.macd(fast=12, slow=21, signal=9)['MACDs_12_21_9']
     df['SUPERTl_7_3.0'] = df.ta.supertrend(length=7, multiplier=3)['SUPERTl_7_3.0']
     df['SUPERTs_7_3.0'] = df.ta.supertrend(length=7, multiplier=3)['SUPERTs_7_3.0']
     df['SUPERTl_14_5.0'] = df.ta.supertrend(length=14, multiplier=5)['SUPERTl_14_5.0']
@@ -46,9 +46,9 @@ def data_frame1(input_value):
     df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
     df['RSI'] = df.ta.rsi(length=14)
     df['RSISMA'] = ta.sma(df.RSI, length=50)
-    df['MACD_12_26_9'] = df.ta.macd(fast=12, slow=26, signal=9)['MACD_12_26_9']
-    df['MACDh_12_26_9'] = df.ta.macd(fast=12, slow=26, signal=9)['MACDh_12_26_9']
-    df['MACDs_12_26_9'] = df.ta.macd(fast=12, slow=26, signal=9)['MACDs_12_26_9']
+    df['MACD_12_26_9'] = df.ta.macd(fast=12, slow=21, signal=9)['MACD_12_21_9']
+    df['MACDh_12_26_9'] = df.ta.macd(fast=12, slow=21, signal=9)['MACDh_12_21_9']
+    df['MACDs_12_26_9'] = df.ta.macd(fast=12, slow=21, signal=9)['MACDs_12_21_9']
     df['SUPERTl_7_3.0'] = df.ta.supertrend(length=7, multiplier=3)['SUPERTl_7_3.0']
     df['SUPERTs_7_3.0'] = df.ta.supertrend(length=7, multiplier=3)['SUPERTs_7_3.0']
     df['SUPERTl_14_5.0'] = df.ta.supertrend(length=14, multiplier=5)['SUPERTl_14_5.0']
