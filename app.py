@@ -14,7 +14,7 @@ def data_frame(input_value):
     df = yf.download(tickers=input_value, period="5d", interval='1m')
     df['SMA20'] = df.ta.sma(length=20)
     df['SMA12'] = df.ta.sma(length=12)
-    df['EMA8'] = df.ta.ema(length=8)
+    df['EMA6'] = df.ta.ema(length=6)
     df['BBL_20_2.0'] = df.ta.bbands(length=20)['BBL_20_2.0']
     df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
     df['RSI'] = df.ta.rsi(length=14)
@@ -41,7 +41,7 @@ def data_frame1(input_value):
     df = yf.download(tickers=input_value, period="4d", interval='5m')
     df['SMA20'] = df.ta.sma(length=20)
     df['SMA12'] = df.ta.sma(length=12)
-    df['EMA8'] = df.ta.ema(length=8)
+    df['EMA6'] = df.ta.ema(length=6)
     df['BBL_20_2.0'] = df.ta.bbands(length=20)['BBL_20_2.0']
     df['BBU_20_2.0'] = df.ta.bbands(length=20)['BBU_20_2.0']
     df['RSI'] = df.ta.rsi(length=14)
@@ -157,8 +157,8 @@ def display_candlestick(n_clicks, input_data, input_value):
 
     data.add_trace(go.Scatter(
         x=df.index[-80:],
-        y=df.EMA8[-80:],
-        name='EMA8',
+        y=df.EMA6[-80:],
+        name='EMA6',
         mode='lines',
         line=dict(color='blue', width=3), hoverinfo='none', yaxis="y3"))
 
@@ -415,8 +415,8 @@ def display_candlestick(n_clicks, input_data, input_value):
 
     data.add_trace(go.Scatter(
         x=df.index[-60:],
-        y=df.EMA8[-60:],
-        name='EMA8',
+        y=df.EMA6[-60:],
+        name='EMA6',
         mode='lines',
         line=dict(color='blue', width=3), hoverinfo='none', yaxis="y3"))
 
